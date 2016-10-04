@@ -225,7 +225,7 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[76]:</div>
+<div class="prompt input_prompt">In&nbsp;[2]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Import libraries</span>
@@ -277,15 +277,15 @@ div#notebook {
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[77]:</div>
+<div class="prompt input_prompt">In&nbsp;[21]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="kn">from</span> <span class="nn">__future__</span> <span class="kn">import</span> <span class="n">division</span>
 <span class="c1"># TODO: Calculate number of students</span>
 <span class="n">n_students</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 
-<span class="c1"># TODO: Calculate number of features</span>
-<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="c1"># TODO: Calculate number of features. The first column is the label column</span>
+<span class="n">n_features</span> <span class="o">=</span> <span class="n">student_data</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">-</span><span class="mi">1</span> 
 
 <span class="c1"># TODO: Calculate passing students</span>
 <span class="n">n_passed</span> <span class="o">=</span> <span class="nb">len</span><span class="p">(</span><span class="n">student_data</span><span class="p">[</span><span class="n">student_data</span><span class="p">[</span><span class="s1">&#39;passed&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;yes&quot;</span><span class="p">])</span>
@@ -315,7 +315,7 @@ div#notebook {
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Total number of students: 395
-Number of features: 31
+Number of features: 30
 Number of students who passed: 265
 Number of students who failed: 130
 Graduation rate of the class: 67.09%
@@ -341,7 +341,7 @@ Graduation rate of the class: 67.09%
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[78]:</div>
+<div class="prompt input_prompt">In&nbsp;[22]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># Extract feature columns</span>
@@ -421,7 +421,7 @@ Feature values:
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[79]:</div>
+<div class="prompt input_prompt">In&nbsp;[23]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="n">X_all</span><span class="o">.</span><span class="n">dtypes</span>
@@ -478,7 +478,7 @@ dtype: object
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[80]:</div>
+<div class="prompt input_prompt">In&nbsp;[24]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;{:20s} {:50}  {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;unique elements&quot;</span><span class="p">,</span> <span class="s2">&quot;type of element&quot;</span><span class="p">)</span>
@@ -539,7 +539,7 @@ romantic              [&apos;no&apos; &apos;yes&apos;]                          
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[81]:</div>
+<div class="prompt input_prompt">In&nbsp;[25]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">preprocess_features</span><span class="p">(</span><span class="n">X</span><span class="p">):</span>
@@ -602,7 +602,7 @@ romantic              [&apos;no&apos; &apos;yes&apos;]                          
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[82]:</div>
+<div class="prompt input_prompt">In&nbsp;[26]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;{:20s} {:50}  {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s2">&quot;column&quot;</span><span class="p">,</span> <span class="s2">&quot;unique elements&quot;</span><span class="p">,</span> <span class="s2">&quot;type of element&quot;</span><span class="p">)</span>
@@ -700,7 +700,7 @@ absences             : [ 6  4 10  2  0 16 14  7  8 25 12 54 18 26 20 56 24 28  5
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[83]:</div>
+<div class="prompt input_prompt">In&nbsp;[29]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import any additional functionality you may need here</span>
@@ -711,12 +711,21 @@ absences             : [ 6  4 10  2  0 16 14  7  8 25 12 54 18 26 20 56 24 28  5
 <span class="c1"># Set the number of testing points</span>
 <span class="n">num_test</span> <span class="o">=</span> <span class="n">X_all</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">-</span> <span class="n">num_train</span>
 
+<span class="c1">#Note: The stratify=y_all implementation was given as a pro tip by a previous Udacity grader!</span>
+<span class="c1">#This parameter ensures that we have an even split of positive and negative examples in the testing and training set.</span>
 <span class="c1"># TODO: Shuffle and split the dataset into the number of training and testing points above</span>
-<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">train_size</span> <span class="o">=</span> <span class="n">num_train</span><span class="p">)</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">X_all</span><span class="p">,</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">train_size</span> <span class="o">=</span> <span class="n">num_train</span><span class="p">,</span> \
+                                                    <span class="n">stratify</span> <span class="o">=</span> <span class="n">y_all</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># Show the results of the split</span>
 <span class="k">print</span> <span class="s2">&quot;Training set has {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_train</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
 <span class="k">print</span> <span class="s2">&quot;Testing set has {} samples.&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">X_test</span><span class="o">.</span><span class="n">shape</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+
+<span class="c1"># Testing for proportions, given by Udacity pro -tipper</span>
+
+<span class="n">y1</span><span class="p">,</span> <span class="n">n1</span> <span class="o">=</span> <span class="n">y_train</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="n">y2</span><span class="p">,</span> <span class="n">n2</span> <span class="o">=</span> <span class="n">y_test</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span><span class="o">.</span><span class="n">values</span>
+<span class="k">print</span> <span class="s2">&quot;ratio of positive to negative in training: {}. In testing: {}&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="nb">float</span><span class="p">(</span><span class="n">y1</span><span class="p">)</span><span class="o">/</span><span class="n">n1</span><span class="p">,</span> <span class="nb">float</span><span class="p">(</span><span class="n">y2</span><span class="p">)</span><span class="o">/</span><span class="n">n2</span><span class="p">)</span>
 </pre></div>
 
 </div>
@@ -731,6 +740,7 @@ absences             : [ 6  4 10  2  0 16 14  7  8 25 12 54 18 26 20 56 24 28  5
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training set has 300 samples.
 Testing set has 95 samples.
+ratio of positive to negative in training: 2.0303030303. In testing: 2.06451612903
 </pre>
 </div>
 </div>
@@ -831,7 +841,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[84]:</div>
+<div class="prompt input_prompt">In&nbsp;[30]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">def</span> <span class="nf">train_classifier</span><span class="p">(</span><span class="n">clf</span><span class="p">,</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">y_train</span><span class="p">):</span>
@@ -904,7 +914,7 @@ Testing set has 95 samples.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[85]:</div>
+<div class="prompt input_prompt">In&nbsp;[31]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import the three supervised learning models from sklearn</span>
@@ -915,9 +925,9 @@ Testing set has 95 samples.
 <span class="c1"># from skearln import model_C</span>
 <span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
 <span class="c1"># TODO: Initialize the three models</span>
-<span class="n">clf_A</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+<span class="n">clf_A</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 <span class="n">clf_B</span> <span class="o">=</span> <span class="n">GaussianNB</span><span class="p">()</span>
-<span class="n">clf_C</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">()</span>
+<span class="n">clf_C</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
 <span class="c1"># TODO: Set up the training set sizes</span>
 <span class="n">X_train_100</span> <span class="o">=</span> <span class="n">X_train</span><span class="p">[:</span><span class="mi">100</span><span class="p">]</span>
@@ -948,47 +958,47 @@ Testing set has 95 samples.
 <div class="output_area"><div class="prompt"></div>
 <div class="output_subarea output_stream output_stdout output_text">
 <pre>Training a RandomForestClassifier using a training set size of 100. . .
-Trained model in 0.0364 seconds
-Made predictions in 0.0012 seconds.
-F1 score for training set: 0.9857.
-Made predictions in 0.0009 seconds.
-F1 score for test set: 0.7939.
+Trained model in 0.0779 seconds
+Made predictions in 0.0036 seconds.
+F1 score for training set: 1.0000.
+Made predictions in 0.0011 seconds.
+F1 score for test set: 0.7442.
 ----------------------------------------------------------------------------------------------------
 Training a RandomForestClassifier using a training set size of 200. . .
-Trained model in 0.0252 seconds
-Made predictions in 0.0019 seconds.
-F1 score for training set: 0.9927.
-Made predictions in 0.0014 seconds.
-F1 score for test set: 0.7385.
+Trained model in 0.0200 seconds
+Made predictions in 0.0012 seconds.
+F1 score for training set: 1.0000.
+Made predictions in 0.0010 seconds.
+F1 score for test set: 0.7552.
 ----------------------------------------------------------------------------------------------------
 Training a RandomForestClassifier using a training set size of 300. . .
-Trained model in 0.0353 seconds
+Trained model in 0.0197 seconds
 Made predictions in 0.0012 seconds.
-F1 score for training set: 0.9926.
+F1 score for training set: 0.9899.
 Made predictions in 0.0008 seconds.
-F1 score for test set: 0.6992.
+F1 score for test set: 0.7200.
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 Training a GaussianNB using a training set size of 100. . .
-Trained model in 0.0006 seconds
+Trained model in 0.0007 seconds
+Made predictions in 0.0003 seconds.
+F1 score for training set: 0.4792.
 Made predictions in 0.0002 seconds.
-F1 score for training set: 0.5263.
-Made predictions in 0.0002 seconds.
-F1 score for test set: 0.5882.
+F1 score for test set: 0.4444.
 ----------------------------------------------------------------------------------------------------
 Training a GaussianNB using a training set size of 200. . .
 Trained model in 0.0007 seconds
 Made predictions in 0.0003 seconds.
-F1 score for training set: 0.7816.
+F1 score for training set: 0.8061.
 Made predictions in 0.0002 seconds.
-F1 score for test set: 0.7200.
+F1 score for test set: 0.6935.
 ----------------------------------------------------------------------------------------------------
 Training a GaussianNB using a training set size of 300. . .
 Trained model in 0.0008 seconds
 Made predictions in 0.0003 seconds.
-F1 score for training set: 0.7921.
-Made predictions in 0.0002 seconds.
-F1 score for test set: 0.7333.
+F1 score for training set: 0.8020.
+Made predictions in 0.0003 seconds.
+F1 score for test set: 0.7656.
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 Training a DecisionTreeClassifier using a training set size of 100. . .
@@ -996,21 +1006,21 @@ Trained model in 0.0007 seconds
 Made predictions in 0.0002 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0002 seconds.
-F1 score for test set: 0.6087.
+F1 score for test set: 0.6667.
 ----------------------------------------------------------------------------------------------------
 Training a DecisionTreeClassifier using a training set size of 200. . .
-Trained model in 0.0013 seconds
+Trained model in 0.0012 seconds
 Made predictions in 0.0002 seconds.
 F1 score for training set: 1.0000.
-Made predictions in 0.0001 seconds.
-F1 score for test set: 0.6992.
+Made predictions in 0.0002 seconds.
+F1 score for test set: 0.7612.
 ----------------------------------------------------------------------------------------------------
 Training a DecisionTreeClassifier using a training set size of 300. . .
-Trained model in 0.0018 seconds
+Trained model in 0.0019 seconds
 Made predictions in 0.0002 seconds.
 F1 score for training set: 1.0000.
 Made predictions in 0.0002 seconds.
-F1 score for test set: 0.7287.
+F1 score for test set: 0.6500.
 ----------------------------------------------------------------------------------------------------
 ####################################################################################################
 </pre>
@@ -1188,7 +1198,8 @@ F1 score for test set: 0.7287.
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong>
+The Gaussian Naive Bayes classifier determines the chance of a data point being a specific class based on the attributes of the data point, and what class those attributes tend to indicate. For example if everytime an attribute (say, guardian is "other") is present the label is positive (needs intervention), then if the model sees a data point that has the guardian being "other", it will predict with a higher probability that the student needs an intervention. The model adds up all the probabilities of each feature and decides which class has the highest probability, and predicts that one.</p>
 
 </div>
 </div>
@@ -1233,7 +1244,7 @@ F1 score for test set: 0.7287.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[86]:</div>
+<div class="prompt input_prompt">In&nbsp;[32]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="k">print</span> <span class="s2">&quot;&quot;&quot;&quot;Prior probability of class &quot;yes&quot; for intervention: {}&quot;&quot;&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">((</span><span class="n">y_all</span><span class="p">[</span><span class="n">y_all</span><span class="o">==</span><span class="s2">&quot;no&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">/</span><span class="n">y_all</span><span class="o">.</span><span class="n">count</span><span class="p">())</span>
@@ -1262,7 +1273,7 @@ F1 score for test set: 0.7287.
 </div>
 <div class="cell border-box-sizing code_cell rendered">
 <div class="input">
-<div class="prompt input_prompt">In&nbsp;[90]:</div>
+<div class="prompt input_prompt">In&nbsp;[33]:</div>
 <div class="inner_cell">
     <div class="input_area">
 <div class=" highlight hl-ipython2"><pre><span></span><span class="c1"># TODO: Import &#39;GridSearchCV&#39; and &#39;make_scorer&#39;</span>
@@ -1305,78 +1316,15 @@ F1 score for test set: 0.7287.
 <div class="output_subarea output_text output_error">
 <pre>
 <span class="ansired">---------------------------------------------------------------------------</span>
-<span class="ansired">ValueError</span>                                Traceback (most recent call last)
-<span class="ansigreen">&lt;ipython-input-90-c2dd24db5dcb&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
-<span class="ansigreen">     15</span> <span class="ansiblue"></span>
-<span class="ansigreen">     16</span> <span class="ansired"># TODO: Fit the grid search object to the training data and find the optimal parameters</span><span class="ansiblue"></span><span class="ansiblue"></span>
-<span class="ansigreen">---&gt; 17</span><span class="ansired"> </span>grid_obj<span class="ansiblue">.</span>fit<span class="ansiblue">(</span>X_train<span class="ansiblue">,</span> y_train<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">     18</span> <span class="ansiblue"></span>
-<span class="ansigreen">     19</span> <span class="ansired"># Get the estimator</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansired">TypeError</span>                                 Traceback (most recent call last)
+<span class="ansigreen">&lt;ipython-input-33-01c243357281&gt;</span> in <span class="ansicyan">&lt;module&gt;</span><span class="ansiblue">()</span>
+<span class="ansigreen">      8</span> <span class="ansired">#take any parameter. This code is meant for demonstration and testing purpose.</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansigreen">      9</span> <span class="ansired"># TODO: Initialize the classifier</span><span class="ansiblue"></span><span class="ansiblue"></span>
+<span class="ansigreen">---&gt; 10</span><span class="ansired"> </span>clf <span class="ansiblue">=</span> GaussianNB<span class="ansiblue">(</span><span class="ansiblue">[</span><span class="ansicyan">0.1</span><span class="ansiblue">,</span><span class="ansicyan">.9</span><span class="ansiblue">]</span><span class="ansiblue">)</span><span class="ansiblue"></span>
+<span class="ansigreen">     11</span> <span class="ansiblue"></span>
+<span class="ansigreen">     12</span> <span class="ansired"># TODO: Make an f1 scoring function using &apos;make_scorer&apos;</span><span class="ansiblue"></span><span class="ansiblue"></span>
 
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/grid_search.pyc</span> in <span class="ansicyan">fit</span><span class="ansiblue">(self, X, y)</span>
-<span class="ansigreen">    802</span> <span class="ansiblue"></span>
-<span class="ansigreen">    803</span>         &quot;&quot;&quot;
-<span class="ansigreen">--&gt; 804</span><span class="ansired">         </span><span class="ansigreen">return</span> self<span class="ansiblue">.</span>_fit<span class="ansiblue">(</span>X<span class="ansiblue">,</span> y<span class="ansiblue">,</span> ParameterGrid<span class="ansiblue">(</span>self<span class="ansiblue">.</span>param_grid<span class="ansiblue">)</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    805</span> <span class="ansiblue"></span>
-<span class="ansigreen">    806</span> <span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/grid_search.pyc</span> in <span class="ansicyan">_fit</span><span class="ansiblue">(self, X, y, parameter_iterable)</span>
-<span class="ansigreen">    551</span>                                     self<span class="ansiblue">.</span>fit_params<span class="ansiblue">,</span> return_parameters<span class="ansiblue">=</span>True<span class="ansiblue">,</span><span class="ansiblue"></span>
-<span class="ansigreen">    552</span>                                     error_score=self.error_score)
-<span class="ansigreen">--&gt; 553</span><span class="ansired">                 </span><span class="ansigreen">for</span> parameters <span class="ansigreen">in</span> parameter_iterable<span class="ansiblue"></span>
-<span class="ansigreen">    554</span>                 for train, test in cv)
-<span class="ansigreen">    555</span> <span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansicyan">__call__</span><span class="ansiblue">(self, iterable)</span>
-<span class="ansigreen">    798</span>             <span class="ansired"># was dispatched. In particular this covers the edge</span><span class="ansiblue"></span><span class="ansiblue"></span>
-<span class="ansigreen">    799</span>             <span class="ansired"># case of Parallel used with an exhausted iterator.</span><span class="ansiblue"></span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 800</span><span class="ansired">             </span><span class="ansigreen">while</span> self<span class="ansiblue">.</span>dispatch_one_batch<span class="ansiblue">(</span>iterator<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">    801</span>                 self<span class="ansiblue">.</span>_iterating <span class="ansiblue">=</span> True<span class="ansiblue"></span>
-<span class="ansigreen">    802</span>             <span class="ansigreen">else</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansicyan">dispatch_one_batch</span><span class="ansiblue">(self, iterator)</span>
-<span class="ansigreen">    656</span>                 <span class="ansigreen">return</span> False<span class="ansiblue"></span>
-<span class="ansigreen">    657</span>             <span class="ansigreen">else</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 658</span><span class="ansired">                 </span>self<span class="ansiblue">.</span>_dispatch<span class="ansiblue">(</span>tasks<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    659</span>                 <span class="ansigreen">return</span> True<span class="ansiblue"></span>
-<span class="ansigreen">    660</span> <span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansicyan">_dispatch</span><span class="ansiblue">(self, batch)</span>
-<span class="ansigreen">    564</span> <span class="ansiblue"></span>
-<span class="ansigreen">    565</span>         <span class="ansigreen">if</span> self<span class="ansiblue">.</span>_pool <span class="ansigreen">is</span> None<span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 566</span><span class="ansired">             </span>job <span class="ansiblue">=</span> ImmediateComputeBatch<span class="ansiblue">(</span>batch<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    567</span>             self<span class="ansiblue">.</span>_jobs<span class="ansiblue">.</span>append<span class="ansiblue">(</span>job<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    568</span>             self<span class="ansiblue">.</span>n_dispatched_batches <span class="ansiblue">+=</span> <span class="ansicyan">1</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansicyan">__init__</span><span class="ansiblue">(self, batch)</span>
-<span class="ansigreen">    178</span>         <span class="ansired"># Don&apos;t delay the application, to avoid keeping the input</span><span class="ansiblue"></span><span class="ansiblue"></span>
-<span class="ansigreen">    179</span>         <span class="ansired"># arguments in memory</span><span class="ansiblue"></span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 180</span><span class="ansired">         </span>self<span class="ansiblue">.</span>results <span class="ansiblue">=</span> batch<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    181</span> <span class="ansiblue"></span>
-<span class="ansigreen">    182</span>     <span class="ansigreen">def</span> get<span class="ansiblue">(</span>self<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/externals/joblib/parallel.pyc</span> in <span class="ansicyan">__call__</span><span class="ansiblue">(self)</span>
-<span class="ansigreen">     70</span> <span class="ansiblue"></span>
-<span class="ansigreen">     71</span>     <span class="ansigreen">def</span> __call__<span class="ansiblue">(</span>self<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">---&gt; 72</span><span class="ansired">         </span><span class="ansigreen">return</span> <span class="ansiblue">[</span>func<span class="ansiblue">(</span><span class="ansiblue">*</span>args<span class="ansiblue">,</span> <span class="ansiblue">**</span>kwargs<span class="ansiblue">)</span> <span class="ansigreen">for</span> func<span class="ansiblue">,</span> args<span class="ansiblue">,</span> kwargs <span class="ansigreen">in</span> self<span class="ansiblue">.</span>items<span class="ansiblue">]</span><span class="ansiblue"></span>
-<span class="ansigreen">     73</span> <span class="ansiblue"></span>
-<span class="ansigreen">     74</span>     <span class="ansigreen">def</span> __len__<span class="ansiblue">(</span>self<span class="ansiblue">)</span><span class="ansiblue">:</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/cross_validation.pyc</span> in <span class="ansicyan">_fit_and_score</span><span class="ansiblue">(estimator, X, y, scorer, train, test, verbose, parameters, fit_params, return_train_score, return_parameters, error_score)</span>
-<span class="ansigreen">   1518</span> <span class="ansiblue"></span>
-<span class="ansigreen">   1519</span>     <span class="ansigreen">if</span> parameters <span class="ansigreen">is</span> <span class="ansigreen">not</span> None<span class="ansiblue">:</span><span class="ansiblue"></span>
-<span class="ansigreen">-&gt; 1520</span><span class="ansired">         </span>estimator<span class="ansiblue">.</span>set_params<span class="ansiblue">(</span><span class="ansiblue">**</span>parameters<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">   1521</span> <span class="ansiblue"></span>
-<span class="ansigreen">   1522</span>     start_time <span class="ansiblue">=</span> time<span class="ansiblue">.</span>time<span class="ansiblue">(</span><span class="ansiblue">)</span><span class="ansiblue"></span>
-
-<span class="ansigreen">/Library/Frameworks/Python.framework/Versions/2.7/lib/python2.7/site-packages/sklearn/base.pyc</span> in <span class="ansicyan">set_params</span><span class="ansiblue">(self, **params)</span>
-<span class="ansigreen">    268</span>                                      <span class="ansiblue">&apos;Check the list of available parameters &apos;</span><span class="ansiblue"></span>
-<span class="ansigreen">    269</span>                                      <span class="ansiblue">&apos;with &#96;estimator.get_params().keys()&#96;.&apos;</span> <span class="ansiblue">%</span><span class="ansiblue"></span>
-<span class="ansigreen">--&gt; 270</span><span class="ansired">                                      (key, self.__class__.__name__))
-</span><span class="ansigreen">    271</span>                 setattr<span class="ansiblue">(</span>self<span class="ansiblue">,</span> key<span class="ansiblue">,</span> value<span class="ansiblue">)</span><span class="ansiblue"></span>
-<span class="ansigreen">    272</span>         <span class="ansigreen">return</span> self<span class="ansiblue"></span>
-
-<span class="ansired">ValueError</span>: Invalid parameter priors for estimator GaussianNB. Check the list of available parameters with &#96;estimator.get_params().keys()&#96;.</pre>
+<span class="ansired">TypeError</span>: object() takes no parameters</pre>
 </div>
 </div>
 
@@ -1390,7 +1338,7 @@ F1 score for test set: 0.7287.
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
 <h3 id="Parameters-to-Tune-(continued)">Parameters to Tune (continued)<a class="anchor-link" href="#Parameters-to-Tune-(continued)">&#182;</a></h3><ul>
-<li>Unfortunately, although <a href="http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html">documentation says otherwise</a>, the Gaussian Naive Bayes classifier implementation in sklearn does not accept any parameters at construction time, making it inaccessible to fine-tunning. Therefore, we will use our second best optimizer, the random forest classifier to fine tune. If this fine-tunned classifier performs better than GNB, we will report it as the best classifier.</li>
+<li>Unfortunately, although <a href="http://scikit-learn.org/stable/modules/generated/sklearn.naive_bayes.GaussianNB.html">documentation says otherwise</a>, the Gaussian Naive Bayes classifier implementation in sklearn does not accept any parameters at construction time, making it inaccessible to fine-tunning. <strong>This is mainly due to the fact that Gaussian Naive Bayes has no hyperparameters to tune</strong>. Therefore, we will use our second best optimizer, the random forest classifier to fine tune. If this fine-tunned classifier performs better than GNB, we will report it as the best classifier. </li>
 <li>Fine tunning the random forest: There are many parameters that can be fine tunned with the random forst approach. The following is a list of the ones that are tuned blow:<ul>
 <li>criterion: this decides which split criterion to follow. As we learned from Michael and Chris, entropy is about information gain, while gini works in another, but efficient, way.</li>
 <li>max_features: this controls the maximum number of features that each decision tree in the forst can leverage at any given time when splitting the data. The functions passes calculate the number of maximum features from the number of total features given. This helps increase the speed performance of the trees by limiting how many features to calculate split gain for.</li>
@@ -1424,7 +1372,7 @@ F1 score for test set: 0.7287.
     <span class="c1">#ERROR: this is where the error happens, indicating that the gaussian Naive Bayes implementation here does not</span>
     <span class="c1">#take any parameter. This code is meant for demonstration and testing purpose.</span>
     <span class="c1"># TODO: Initialize the classifier</span>
-    <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">()</span>
+    <span class="n">clf</span> <span class="o">=</span> <span class="n">RandomForestClassifier</span><span class="p">(</span><span class="n">random_state</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
 
     <span class="c1"># TODO: Make an f1 scoring function using &#39;make_scorer&#39; </span>
     <span class="n">f1_scorer</span> <span class="o">=</span> <span class="n">make_scorer</span><span class="p">(</span><span class="n">f1_score</span><span class="p">,</span> <span class="n">pos_label</span><span class="o">=</span><span class="s2">&quot;yes&quot;</span><span class="p">)</span>
@@ -1527,8 +1475,7 @@ max_depth                                3
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<h3 id="Question-5---Final-F1-Score">Question 5 - Final F<sub>1</sub> Score<a class="anchor-link" href="#Question-5---Final-F1-Score">&#182;</a></h3><p>The fine tunned model performs much better than the untuned model. It tends to perform about 10% better on F1 score than the untuned model. However, it seems that there is variation in the results of what is the best parameter for min_samples_split and max_features numberes. Since max_features is more geared towards speed performance, we disregard this, since the optimization is constrained by the f1 score, not the speed. However, the min_samples_split parameter controls the threshold for which to make more splits in the data. It shows a range of variation from 0.3 to 0.7. This is an interesting side effect of the optimization.</p>
-<p>It is worthy to note that the fine tuned random forst algorithm outpreformed the GNB implementation.</p>
+<h3 id="Question-5---Final-F1-Score">Question 5 - Final F<sub>1</sub> Score<a class="anchor-link" href="#Question-5---Final-F1-Score">&#182;</a></h3><p><em>What is the final model's F1 score for training and testing? How does that score compare to the untuned model?</em>—</p>
 
 </div>
 </div>
@@ -1538,7 +1485,13 @@ max_depth                                3
 </div>
 <div class="inner_cell">
 <div class="text_cell_render border-box-sizing rendered_html">
-<p><strong>Answer: </strong></p>
+<p><strong>Answer: </strong>
+The fine tunned model performs much better than the untuned model. It tends to perform about 10% better on F1 score than the untuned model. However, it seems that there is variation in the results of what is the best parameter for min_samples_split and max_features numberes. Since max_features is more geared towards speed performance, we disregard this, since the optimization is constrained by the f1 score, not the speed. However, the min_samples_split parameter controls the threshold for which to make more splits in the data. It shows a range of variation from 0.3 to 0.7. This is an interesting side effect of the optimization.</p>
+<p>It is worthy to note that the fine tuned random forst algorithm outpreformed the GNB implementation.</p>
+<ul>
+<li>F<sub>1</sub> score for untuned GNB: 0.7656</li>
+<li>F<sub>1</sub> score for fine tuned Random Forest: 0.8108</li>
+</ul>
 
 </div>
 </div>
